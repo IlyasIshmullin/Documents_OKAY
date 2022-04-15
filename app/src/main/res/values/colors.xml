@@ -9,4 +9,7 @@
     <color name="white">#FFFFFFFF</color>
     <color name="colorPrimary">#0061CA</color>
     <color name="colorPrimaryDark">#4B84F1</color>
+    <color name="colorBlueOfAuthorization">#0061CA</color>
+    <color name="createNewAccount">#00CA51</color>
+
 </resources>

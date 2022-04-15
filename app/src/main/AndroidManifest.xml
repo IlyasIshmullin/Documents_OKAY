@@ -10,6 +10,11 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Documents_OKAY">
         <activity
+            android:name=".AuthorizationActivity"
+            android:exported="false"
+            android:label="@string/title_activity_authorization"
+            android:theme="@style/Theme.Documents_OKAY.NoActionBar" />
+        <activity
             android:name=".MainMenu.MainMenuActivity"
             android:exported="true">
             <intent-filter>
@@ -18,10 +23,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
         <activity
             android:name=".MainActivity"
-            android:exported="true">
-        </activity>
+            android:exported="true"></activity>
     </application>
+
 </manifest>

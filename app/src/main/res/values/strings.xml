@@ -3,4 +3,21 @@
 
     <string name="openNavDrawer">Navigation Drawer Open</string>
     <string name="closeNavDrawer">Navigation Drawer Close</string>
+    <string name="title_activity_authorization">AuthorizationActivity</string>
+
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+
+    <!-- Strings used for authorization activity -->
+    <string name="documentsAuthorization">Documents</string>
+    <string name="email">email*</string>
+    <string name="password">password*</string>
+    <string name="resetPassword">Forgot Password?</string>
+    <string name="notFoundAccount">Account not found</string>
+    <string name="notFoundAccountCheck">Please, check your email and password are correct</string>
+    <string name="logIn">Log In</string>
+    <string name="createNewAccount">Create New Account</string>
+
 </resources>
