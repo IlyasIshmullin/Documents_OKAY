@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:title="STORAGE">
+        <menu>
+            <item android:title="My Documents"
+                android:icon="@drawable/ic_action_docs"/>
+
+            <item android:title="My Synchronize"
+                android:icon="@drawable/ic_action_docs"/>
+
+        </menu>
+    </item>
+
+    <item android:title="APP">
+        <menu>
+
+            <item android:title="Share"
+                android:icon="@drawable/ic_action_docs"/>
+
+            <item android:title="Log out"
+                android:icon="@drawable/ic_action_docs"/>
+        </menu>
+    </item>
+</menu>
