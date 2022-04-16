@@ -16,7 +16,15 @@ class MainMenuActivity : AppCompatActivity(), NavigationView.OnNavigationItemSel
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main_menu)
 
-        val toolbar : androidx.appcompat.widget.Toolbar = findViewById(R.id.main_toolbar)
+        nav_drawer()
+
+
+    }
+
+    private fun nav_drawer() : Void? {
+        val toolbar : com.google.android.material.appbar.MaterialToolbar = findViewById(R.id.main_toolbar)
+        setSupportActionBar(toolbar)
+
         val drawerLayout : DrawerLayout= findViewById(R.id.drawer_layout)
         val navigationView : NavigationView= findViewById(R.id.navigation_view)
 
@@ -30,10 +38,10 @@ class MainMenuActivity : AppCompatActivity(), NavigationView.OnNavigationItemSel
         drawerLayout.addDrawerListener(actionBarDrawerToggle)
         actionBarDrawerToggle.syncState()
         navigationView.setNavigationItemSelectedListener(this)
-
-        //supportActionBar?.setDisplayHomeAsUpEnabled(true)
-
+        return null
     }
+
+
 
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
         TODO("Not yet implemented")
