@@ -17,8 +17,6 @@ class MainMenuActivity : AppCompatActivity(), NavigationView.OnNavigationItemSel
         setContentView(R.layout.activity_main_menu)
 
         nav_drawer()
-
-
     }
 
     private fun nav_drawer() : Void? {
@@ -38,9 +36,10 @@ class MainMenuActivity : AppCompatActivity(), NavigationView.OnNavigationItemSel
         drawerLayout.addDrawerListener(actionBarDrawerToggle)
         actionBarDrawerToggle.syncState()
         navigationView.setNavigationItemSelectedListener(this)
+
+
         return null
     }
-
 
 
     override fun onNavigationItemSelected(item: MenuItem): Boolean {

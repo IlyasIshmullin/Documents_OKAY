@@ -1,17 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <item android:title="STORAGE">
-        <menu>
-            <item android:title="My Documents"
-                android:icon="@drawable/ic_action_docs"/>
-
-            <item android:title="Contacts"
-                android:icon="@drawable/ic_action_contacts"/>
-
-        </menu>
-    </item>
-
     <item android:title="APP">
         <menu>
 
@@ -22,4 +11,6 @@
                 android:icon="@drawable/ic_baseline_exit"/>
         </menu>
     </item>
+
+
 </menu>
