@@ -12,6 +12,7 @@
         android:theme="@style/MaterialAlertDialog.Material3.Title.Text.CenterStacked">
 
         <com.google.android.material.appbar.MaterialToolbar
+            android:fitsSystemWindows="true"
             android:id="@+id/main_toolbar"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"

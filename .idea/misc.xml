@@ -4,14 +4,18 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/iishm/AndroidStudioProjects/Documents_OKAY/app/src/main/res/drawable/ic_baseline_exit.xml" value="0.1" />
-        <entry key="..\:/Users/iishm/AndroidStudioProjects/Documents_OKAY/app/src/main/res/layout/activity_authorization.xml" value="0.234375" />
+        <entry key="..\:/Users/iishm/AndroidStudioProjects/Documents_OKAY/app/src/main/res/layout/activity_authorization.xml" value="0.176" />
         <entry key="..\:/Users/iishm/AndroidStudioProjects/Documents_OKAY/app/src/main/res/layout/activity_main.xml" value="0.22135416666666666" />
         <entry key="..\:/Users/iishm/AndroidStudioProjects/Documents_OKAY/app/src/main/res/layout/activity_main_menu.xml" value="0.2" />
         <entry key="..\:/Users/iishm/AndroidStudioProjects/Documents_OKAY/app/src/main/res/layout/app_bar_main.xml" value="0.1" />
+        <entry key="..\:/Users/iishm/AndroidStudioProjects/Documents_OKAY/app/src/main/res/layout/contacts_fragment.xml" value="0.22135416666666666" />
         <entry key="..\:/Users/iishm/AndroidStudioProjects/Documents_OKAY/app/src/main/res/layout/content_main.xml" value="0.234375" />
+        <entry key="..\:/Users/iishm/AndroidStudioProjects/Documents_OKAY/app/src/main/res/layout/documents_fragment.xml" value="0.234375" />
         <entry key="..\:/Users/iishm/AndroidStudioProjects/Documents_OKAY/app/src/main/res/layout/nav_header.xml" value="0.2" />
+        <entry key="..\:/Users/iishm/AndroidStudioProjects/Documents_OKAY/app/src/main/res/layout/profile_fragment.xml" value="0.234375" />
         <entry key="..\:/Users/iishm/AndroidStudioProjects/Documents_OKAY/app/src/main/res/menu/mav_menu.xml" value="0.234375" />
         <entry key="..\:/Users/iishm/AndroidStudioProjects/Documents_OKAY/app/src/main/res/menu/nav_menu.xml" value="0.4" />
+        <entry key="..\:/Users/iishm/AndroidStudioProjects/Documents_OKAY/app/src/main/res/menu/nav_menu_bottom.xml" value="0.234375" />
         <entry key="..\:/Users/iishm/AndroidStudioProjects/Documents_OKAY/app/src/main/res/menu/nav_menu_top.xml" value="0.234375" />
       </map>
     </option>
