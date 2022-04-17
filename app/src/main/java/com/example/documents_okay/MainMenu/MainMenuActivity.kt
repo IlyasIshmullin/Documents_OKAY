@@ -2,7 +2,6 @@ package com.example.documents_okay.MainMenu
 
 import android.content.Intent
 import android.os.Bundle
-import android.view.Gravity
 import android.view.MenuItem
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AppCompatActivity
@@ -12,7 +11,6 @@ import androidx.fragment.app.Fragment
 import com.example.documents_okay.MainActivity
 import com.example.documents_okay.MainMenu.ui.contacts.ContactsFragment
 import com.example.documents_okay.MainMenu.ui.documents.DocumentsFragment
-import com.example.documents_okay.MainMenu.ui.profile.ProfileFragment
 import com.example.documents_okay.R
 import com.google.android.material.navigation.NavigationView
 
@@ -61,6 +59,13 @@ class MainMenuActivity : AppCompatActivity(), NavigationView.OnNavigationItemSel
 
             R.id.nav_contacts ->
                 changeFragment(ContactsFragment())
+
+            R.id.nav_logOut -> {
+                val intent = Intent(this, MainActivity::class.java)
+                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
+                startActivity(intent)
+                finish()
+            }
 
         }
 
