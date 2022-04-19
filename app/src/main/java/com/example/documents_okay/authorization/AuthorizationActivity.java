@@ -67,7 +67,6 @@ public class AuthorizationActivity extends AppCompatActivity {
                         if(task.isSuccessful())
                             Toast.makeText(AuthorizationActivity.this, "OK", Toast.LENGTH_SHORT)
                                     .show();
-
                     }
                 });
     }

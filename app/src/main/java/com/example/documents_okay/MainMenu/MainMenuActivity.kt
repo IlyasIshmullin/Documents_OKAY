@@ -39,6 +39,7 @@ class MainMenuActivity : AppCompatActivity(), NavigationView.OnNavigationItemSel
         nav_drawer()
 
         FAB()
+
     }
 
     private fun FAB(): Void? {
@@ -162,6 +163,8 @@ class MainMenuActivity : AppCompatActivity(), NavigationView.OnNavigationItemSel
                 finish()
 
                  */
+
+
             }
 
         }
