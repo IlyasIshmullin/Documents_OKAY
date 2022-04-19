@@ -6,16 +6,19 @@
     android:background="@color/colorPrimaryDark"
     android:padding="8dp"
     android:orientation="horizontal"
-    android:theme="@style/ThemeOverlay.AppCompat.Dark">
+    android:theme="@style/ThemeOverlay.AppCompat.Dark"
+    android:clickable="true"
+    android:id="@+id/linearLayoutHeader">
 
     <ImageView
         android:id="@+id/imageViewAvatar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@drawable/ic_launcher_foreground"/>
+        android:padding="16dp"
+        android:src="@mipmap/ic_pavel_durov_round"/>
 
     <LinearLayout
-        android:paddingTop="16dp"
+        android:paddingTop="24dp"
         android:paddingStart="8dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
