@@ -35,7 +35,7 @@ class MainMenuActivity : AppCompatActivity(), NavigationView.OnNavigationItemSel
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main_menu)
-
+        i
         nav_drawer()
 
         FAB()
@@ -157,12 +157,12 @@ class MainMenuActivity : AppCompatActivity(), NavigationView.OnNavigationItemSel
                 changeFragment(ContactsFragment())
 
             R.id.nav_logOut -> {
-                /*val intent = Intent(this, AuthorizationActivity)
+                val intent = Intent(this, AuthorizationActivity::class.java)
                 intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
                 startActivity(intent)
                 finish()
 
-                 */
+
 
 
             }
