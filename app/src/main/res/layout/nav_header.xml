@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="120dp"
+    android:background="@color/colorPrimaryDark"
+    android:padding="8dp"
+    android:orientation="horizontal"
+    android:theme="@style/ThemeOverlay.AppCompat.Dark">
+
+    <ImageView
+        android:id="@+id/imageViewAvatar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_launcher_foreground"/>
+
+    <LinearLayout
+        android:paddingTop="16dp"
+        android:paddingStart="8dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textViewName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Ilyas"
+                android:textSize="20sp"/>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_marginLeft="8dp"
+                android:id="@+id/textViewSurname"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Ishmullin"
+                android:textSize="20sp"/>
+        </LinearLayout>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_marginTop="20sp"
+            android:id="@+id/textViewEmail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Ilya.ishmullin.24.04.2006@gmail.com"
+            android:textSize="8sp"/>
+    </LinearLayout>
+</LinearLayout>
