@@ -35,8 +35,9 @@ class MainMenuActivity : AppCompatActivity(), NavigationView.OnNavigationItemSel
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main_menu)
-        i
         nav_drawer()
+        val intent = Intent(this, AuthorizationActivity::class.java)
+        startActivity(intent)
 
         FAB()
 

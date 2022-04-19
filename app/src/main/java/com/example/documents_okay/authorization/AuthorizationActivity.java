@@ -31,7 +31,6 @@ public class AuthorizationActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_authorization);
-
         editTextEmailAddress = findViewById(R.id.edit_text_email_register);
         editTextPassword = findViewById(R.id.edit_text_password_register);
 
@@ -43,7 +42,6 @@ public class AuthorizationActivity extends AppCompatActivity {
         logInButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                finish();
                 logIn(editTextEmailAddress.getText().toString(), editTextPassword.getText().toString());
             }
 
