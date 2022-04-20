@@ -57,21 +57,20 @@ public class AuthorizationActivity extends AppCompatActivity {
         });
     }
 
-    private void logIn(String email, String password){
-        if(email.isEmpty() || password.isEmpty()) {
+    private void logIn(String email, String password) {
+        if (email.isEmpty() || password.isEmpty()) {
             Toast.makeText(AuthorizationActivity.this, "Enter email and password", Toast.LENGTH_LONG)
                     .show();
+            return;
         }
-        else{
-            firebaseAuth.signInWithEmailAndPassword(email, password)
-                    .addOnCompleteListener(AuthorizationActivity.this, new OnCompleteListener<AuthResult>() {
-                        @Override
-                        public void onComplete(@NonNull Task<AuthResult> task) {
-                            if (task.isSuccessful())
-                                Toast.makeText(AuthorizationActivity.this, "OK", Toast.LENGTH_SHORT)
-                                        .show();
-                        }
-                    });
-        }
+        firebaseAuth.signInWithEmailAndPassword(email, password)
+                .addOnCompleteListener(AuthorizationActivity.this, new OnCompleteListener<AuthResult>() {
+                    @Override
+                    public void onComplete(@NonNull Task<AuthResult> task) {
+                        if (task.isSuccessful())
+                            Toast.makeText(AuthorizationActivity.this, "OK", Toast.LENGTH_SHORT)
+                                    .show();
+                    }
+                });
     }
 }

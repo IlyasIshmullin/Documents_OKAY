@@ -29,31 +29,29 @@ public class RegistrationFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_registration,
+        View viewRegistrationFragment = inflater.inflate(R.layout.fragment_registration,
                 container, false);
 
-        registerButton = view.findViewById(R.id.register_button);
-        emailRegister = view.findViewById(R.id.edit_text_email_register);
-        passwordRegister = view.findViewById(R.id.edit_text_password_register);
+        registerButton = viewRegistrationFragment.findViewById(R.id.register_button);
+        emailRegister = viewRegistrationFragment.findViewById(R.id.edit_text_email_register);
+        passwordRegister = viewRegistrationFragment.findViewById(R.id.edit_text_password_register);
 
 
-        return view;
+        return viewRegistrationFragment;
     }
 
     @Override
     public void onStart() {
         super.onStart();
-        registerButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                registration(emailRegister.getText().toString(), passwordRegister.getText().toString());
-            }
-        });
+        registerButton.setOnClickListener(view ->
+                registration(emailRegister.getText().toString(), passwordRegister.getText().toString()));
     }
 
     private void registration(String email, String password) {
         firebaseAuth = FirebaseAuth.getInstance();
-
+        if(email.isEmpty() || password.isEmpty())
+            Toast.makeText(getActivity(), "Please, enter email address and password", Toast.LENGTH_SHORT)
+                    .show();
         firebaseAuth.createUserWithEmailAndPassword(email, password)
                 .addOnCompleteListener(getActivity(), new OnCompleteListener<AuthResult>() {
                     @Override
