@@ -11,7 +11,8 @@ import android.view.ViewGroup;
 import com.example.documents_okay.R;
 
 
-public class ResetPasswordFragment extends Fragment {
+public class AuthorizationFragment extends Fragment {
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -21,8 +22,7 @@ public class ResetPasswordFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View viewResetPasswordFragment = inflater.inflate(R.layout.fragment_reset_password, container, false);
         //TODO
-        return inflater.inflate(R.layout.fragment_reset_password, container, false);
+        return inflater.inflate(R.layout.fragment_authorization, container, false);
     }
 }
