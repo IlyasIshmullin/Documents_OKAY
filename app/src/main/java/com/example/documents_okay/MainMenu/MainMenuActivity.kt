@@ -1,6 +1,7 @@
 package com.example.documents_okay.MainMenu
 
 import android.content.Intent
+import android.content.SharedPreferences
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
@@ -17,6 +18,8 @@ import com.example.documents_okay.MainMenu.ui.contacts.ContactsFragment
 import com.example.documents_okay.MainMenu.ui.documents.DocumentsFragment
 import com.example.documents_okay.MainMenu.ui.profile.ProfileFragment
 import com.example.documents_okay.R
+import com.example.documents_okay.SplashActivity
+import com.example.documents_okay.SplashActivity.dataUser
 import com.example.documents_okay.authorization.AuthorizationActivity
 import com.google.android.material.navigation.NavigationView
 
@@ -36,8 +39,6 @@ class MainMenuActivity : AppCompatActivity(), NavigationView.OnNavigationItemSel
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main_menu)
         nav_drawer()
-        val intent = Intent(this, AuthorizationActivity::class.java)
-        startActivity(intent)
 
         FAB()
 
@@ -158,6 +159,8 @@ class MainMenuActivity : AppCompatActivity(), NavigationView.OnNavigationItemSel
                 changeFragment(ContactsFragment())
 
             R.id.nav_logOut -> {
+                val editor: SharedPreferences.Editor = dataUser.edit()
+                editor.putBoolean(SplashActivity.APP_PREFERENCES_CHECK, false).apply()
                 val intent = Intent(this, AuthorizationActivity::class.java)
                 intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
                 startActivity(intent)

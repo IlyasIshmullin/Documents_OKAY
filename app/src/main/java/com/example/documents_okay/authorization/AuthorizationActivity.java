@@ -1,6 +1,10 @@
 package com.example.documents_okay.authorization;
 
+import static com.example.documents_okay.SplashActivity.APP_PREFERENCES_CHECK;
+import static com.example.documents_okay.SplashActivity.dataUser;
+
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -17,6 +21,7 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 public class AuthorizationActivity extends AppCompatActivity {
     private EditText editTextEmailAddress;
@@ -25,7 +30,7 @@ public class AuthorizationActivity extends AppCompatActivity {
     private Button logInButton;
     private Button createNewAccountButton;
 
-    private FirebaseAuth firebaseAuth;
+    public static FirebaseAuth firebaseAuth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -67,9 +72,14 @@ public class AuthorizationActivity extends AppCompatActivity {
                 .addOnCompleteListener(AuthorizationActivity.this, new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
-                        if (task.isSuccessful())
+                        if (task.isSuccessful()) {
                             Toast.makeText(AuthorizationActivity.this, "OK", Toast.LENGTH_SHORT)
                                     .show();
+                            SharedPreferences.Editor editor = dataUser.edit();
+                            editor.putBoolean(APP_PREFERENCES_CHECK, true).apply();
+                            Intent intent = new Intent(AuthorizationActivity.this, MainMenuActivity.class);
+                            startActivity(intent);
+                        }
                     }
                 });
     }
