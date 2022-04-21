@@ -62,9 +62,12 @@ public class AuthorizationActivity extends AppCompatActivity {
                 .addOnCompleteListener(AuthorizationActivity.this, new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
-                        if(task.isSuccessful())
+                        if(task.isSuccessful()) {
                             Toast.makeText(AuthorizationActivity.this, "OK", Toast.LENGTH_SHORT)
                                     .show();
+                            Intent intent = new Intent(AuthorizationActivity.this, MainMenuActivity.class);
+                            startActivity(intent);
+                        }
                     }
                 });
     }

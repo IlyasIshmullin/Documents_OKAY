@@ -58,9 +58,11 @@ public class RegistrationFragment extends Fragment {
                 .addOnCompleteListener(getActivity(), new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
-                        if(task.isSuccessful())
+                        if(task.isSuccessful()) {
                             Toast.makeText(getActivity(), "OK", Toast.LENGTH_SHORT)
                                     .show();
+
+                        }
                     }
                 });
     }

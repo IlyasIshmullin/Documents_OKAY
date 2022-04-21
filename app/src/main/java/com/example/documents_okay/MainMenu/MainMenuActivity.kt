@@ -13,18 +13,26 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.fragment.app.Fragment
+import androidx.navigation.findNavController
+import androidx.navigation.ui.AppBarConfiguration
+import androidx.navigation.ui.setupWithNavController
 import com.example.documents_okay.MainMenu.ui.contacts.ContactsFragment
 import com.example.documents_okay.MainMenu.ui.documents.DocumentsFragment
 import com.example.documents_okay.MainMenu.ui.profile.ProfileFragment
 import com.example.documents_okay.R
 import com.example.documents_okay.authorization.AuthorizationActivity
+import com.google.android.material.bottomnavigation.BottomNavigationView
+import com.google.android.material.navigation.NavigationBarView
 import com.google.android.material.navigation.NavigationView
 
 
 class MainMenuActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
 
 
+//    private lateinit var appBarConfiguration: AppBarConfiguration
+//    private lateinit var binding: ActivityMainMenuBinding
     private lateinit var drawerLayout : DrawerLayout
+    private lateinit var navBottomView : BottomNavigationView
     private val rotateOpen : Animation by lazy {AnimationUtils.loadAnimation(this, R.anim.rotate_open_animation)}
     private val rotateClose: Animation by lazy { AnimationUtils.loadAnimation(this, R.anim.rotate_close_animatioin) }
     private val fromBottom: Animation by lazy { AnimationUtils.loadAnimation(this, R.anim.from_bottom_animation) }
@@ -36,11 +44,64 @@ class MainMenuActivity : AppCompatActivity(), NavigationView.OnNavigationItemSel
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main_menu)
         nav_drawer()
-        val intent = Intent(this, AuthorizationActivity::class.java)
-        startActivity(intent)
 
         FAB()
 
+    }
+
+    private fun nav_drawer(): Void? {
+
+
+        val toolbar: com.google.android.material.appbar.MaterialToolbar =
+            findViewById(R.id.main_toolbar)
+        setSupportActionBar(toolbar)
+
+        drawerLayout = findViewById(R.id.drawer_layout)
+
+        val navigationView: NavigationView = findViewById(R.id.navigation_view)
+
+
+        navBottomView = findViewById(R.id.bottom_navigation_view)
+        navBottomView.setOnItemSelectedListener{item ->
+            when(item.itemId) {
+                R.id.nav_documents ->
+                    changeFragment(DocumentsFragment())
+
+                R.id.nav_contacts ->
+                    changeFragment(ContactsFragment())
+
+                R.id.nav_account ->
+                    changeFragment(ProfileFragment())
+            }
+            true
+        }
+
+        //val bottomNavigationView = findViewById<BottomNavigationView>(R.id.bottom_navigation_view)
+        //val navController = navigationView.setupWithNavController(navigationView)
+        //bottomNavigationView.setupWithNavController(navController)
+
+
+        val actionBarDrawerToggle: ActionBarDrawerToggle = ActionBarDrawerToggle(
+            this,
+            drawerLayout,
+            toolbar,
+            R.string.openNavDrawer,
+            R.string.closeNavDrawer
+        )
+
+        drawerLayout.addDrawerListener(actionBarDrawerToggle)
+        actionBarDrawerToggle.syncState()
+        navigationView.setNavigationItemSelectedListener(this)
+
+        //val navController = findNavController(R.id.nav_host_fragment_content_main)
+
+        val navigationHeader : View = navigationView.getHeaderView(0);
+        navigationHeader.setOnClickListener {
+            changeFragment(ProfileFragment())
+            navBottomView.menu.findItem(R.id.nav_account).isChecked = true
+        }
+
+        return null
     }
 
     private fun FAB(): Void? {
@@ -104,34 +165,6 @@ class MainMenuActivity : AppCompatActivity(), NavigationView.OnNavigationItemSel
 
 
 
-    private fun nav_drawer(): Void? {
-        val toolbar: com.google.android.material.appbar.MaterialToolbar =
-            findViewById(R.id.main_toolbar)
-        setSupportActionBar(toolbar)
-
-        drawerLayout = findViewById(R.id.drawer_layout)
-        val navigationView: NavigationView = findViewById(R.id.navigation_view)
-
-        val actionBarDrawerToggle: ActionBarDrawerToggle = ActionBarDrawerToggle(
-            this,
-            drawerLayout,
-            toolbar,
-            R.string.openNavDrawer,
-            R.string.closeNavDrawer
-        )
-
-        drawerLayout.addDrawerListener(actionBarDrawerToggle)
-        actionBarDrawerToggle.syncState()
-        navigationView.setNavigationItemSelectedListener(this)
-
-        val navigationHeader : View = navigationView.getHeaderView(0);
-        navigationHeader.setOnClickListener {
-            changeFragment(ProfileFragment())
-        }
-
-        return null
-    }
-
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         menuInflater.inflate(R.menu.nav_top_app_bar, menu)
         return true
@@ -139,32 +172,36 @@ class MainMenuActivity : AppCompatActivity(), NavigationView.OnNavigationItemSel
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when(item.itemId) {
-            R.id.nav_avatar ->
+            R.id.nav_avatar -> {
                 changeFragment(ProfileFragment())
+                navBottomView.menu.findItem(R.id.nav_account).isChecked = true
+            }
         }
         return true
     }
 
-    override fun onNavigationItemSelected(item: MenuItem): Boolean {
+    /*override fun onSupportNavigateUp(): Boolean {
+        val navController = findNavController(R.id.nav_host_fragment_content_main)
+        return navController.navigateUp(appBarConfiguration) || super.onSupportNavigateUp()
+    }*/
 
+    override fun onNavigationItemSelected(item: MenuItem): Boolean {
 
         when(item.itemId) {
 
-
-            R.id.nav_documents ->
+            R.id.nav_documents -> {
                 changeFragment(DocumentsFragment())
-
-            R.id.nav_contacts ->
+                navBottomView.menu.findItem(R.id.nav_documents).isChecked = true
+            }
+            R.id.nav_contacts -> {
                 changeFragment(ContactsFragment())
-
+                navBottomView.menu.findItem(R.id.nav_contacts).isChecked = true
+            }
             R.id.nav_logOut -> {
                 val intent = Intent(this, AuthorizationActivity::class.java)
                 intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
                 startActivity(intent)
                 finish()
-
-
-
 
             }
 
